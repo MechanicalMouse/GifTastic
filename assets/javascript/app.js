@@ -1,14 +1,6 @@
 var topics = ["hamster", "space", "food", "raichu", "tea"]
 
 
-//var queryURL = `https://api.giphy.com/v1/gifs/search?q=${topics}&api_key=UA4jHqQhXxYph6oiBOoI7fl8fNLsuZIt`;
-
-//$.ajax({
-//  url: queryURL,
-// method: "GET"
-// })
-
-
 function renderButtons() {    
        
     $("#buttons").empty();
@@ -31,10 +23,8 @@ function renderButtons() {
 
      
 $("#add-button").on("click", function(event) {
-       
     event.preventDefault();
-
-      
+    
     var topic = $("#button-input").val().trim();
        
     topics.push(topic);
@@ -47,3 +37,45 @@ $("#add-button").on("click", function(event) {
 renderButtons();
 
 
+$("button").on("click", function() {
+
+    var queryURL = `https://api.giphy.com/v1/gifs/search?q=${topics}&api_key=UA4jHqQhXxYph6oiBOoI7fl8fNLsuZIt`;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      
+    .then(function(response) {
+        
+        var results = response.data;
+
+        
+        for (var i = 0; i < results.length; i++) {
+
+          
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+            
+                var gifDiv = $("<div>");
+
+            
+                var rating = results[i].rating;
+
+            
+                var topicImage = $("<img>");
+                
+                
+                var p = $("<p>").text("Rating: " + rating);
+            
+                topicImage.attr("src", results[i].images.fixed_height.url);
+
+
+                gifDiv.append(p);
+                gifDiv.append(topicImage);
+
+            
+                $("#gifs-appear-here").prepend(gifDiv);
+            }
+        }
+    });
+});

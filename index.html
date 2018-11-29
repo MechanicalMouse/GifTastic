@@ -15,19 +15,29 @@
         <img src="assets/images/favorite-things.jpg">
     </header>
 
-    <div class="container">
+    <div class="container row">
+        <div class="col-md-6">
+            <br><div id="buttons"></div><br>
         
-        <br><div id="buttons"></div><br>
+            
+        </div>
         
-        <form id="button-form">
-            <label id="label" for="button-input">Search your favorite things!</label><br>
-            <input type="text" id="button-input"><br>
+        <div class="col-md-6">
+            <form id="button-form">
+                <label id="label" for="button-input">Search your favorite things!</label><br>
+                <input type="text" id="button-input"><br>
         
 
-            <input id="add-button" class="btn btn-success" type="submit" value="Add a button!!">
-        </form>
+                <input id="add-button" class="btn btn-success" type="submit" value="Add a button!!">
+            </form>
+        </div>
     </div>        
 
+    <div>
+        <div id="gifs-appear-here">
+            
+        </div>
+    </div>
 <script src="assets/javascript/app.js"></script>
 </body>
 </html>
