@@ -1,0 +1,18 @@
+body {
+    background-image: url("../images/leaves.png");
+    
+}
+
+header {
+    margin: 0 auto;
+    width: 40%;
+}
+
+.container {
+    width: 30%;
+    float: right;
+}
+
+button div form input {
+    margin: 10px;
+}
