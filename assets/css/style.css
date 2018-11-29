@@ -8,11 +8,24 @@ header {
     width: 40%;
 }
 
-.container {
+label {
+    font-weight: bold;
+}
+
+#button-form {
     width: 30%;
     float: right;
 }
 
+#buttons {
+    width: 50%;
+    float: left;
+}
+
 button div form input {
     margin: 10px;
+}
+
+.favButton {
+    margin: 5px;
 }

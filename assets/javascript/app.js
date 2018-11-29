@@ -19,7 +19,7 @@ function renderButtons() {
          
          var a = $("<button>");
          
-         a.addClass("favButton");
+         a.addClass("favButton btn btn-info");
          
          a.attr("data-name", topics[i]);
          
