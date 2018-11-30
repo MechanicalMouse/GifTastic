@@ -88,7 +88,7 @@ $("button").on("click", function() {
 //animating gifs
 $(document).on("click", ".image", function(){
 	var state = $(this).attr("data-state");
-		if ( state == "still"){
+		if ( state === "still"){
                 $(this).attr("src", $(this).data("animate"));
                 $(this).attr("data-state", "animate");
             }else{
