@@ -26,7 +26,7 @@ $("#add-button").on("click", function(event) {
     event.preventDefault();
     
     var topic = $("#button-input").val().trim();
-       
+
     topics.push(topic);
 
        
@@ -88,11 +88,12 @@ $("button").on("click", function() {
 //animating gifs
 $(document).on("click", ".image", function(){
 	var state = $(this).attr("data-state");
-		if ( state === "still"){
-                $(this).attr("src", $(this).data("animate"));
-                $(this).attr("data-state", "animate");
-            }else{
-                $(this).attr("src", $(this).data("still"));
-                $(this).attr("data-state", "still");
-            };
+    
+    if ( state === "still"){
+        $(this).attr("src", $(this).data("animate"));
+        $(this).attr("data-state", "animate");
+    }else{
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "still");
+    };
 });
