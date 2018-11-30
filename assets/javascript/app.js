@@ -68,14 +68,30 @@ $("button").on("click", function() {
                 var p = $("<p>").text("Rating: " + rating);
             
                 topicImage.attr("src", results[i].images.fixed_height.url);
-
+                topicImage.attr("data-still", results[i].images.fixed_height_still.url);
+				topicImage.attr("data-state", "still");
+                topicImage.attr("data-animate", results[i].images.fixed_height.url);
+                topicImage.addClass("image");
 
                 gifDiv.prepend(p);
                 gifDiv.prepend(topicImage);
 
             
-                $("#gifs-appear-here").prepend(gifDiv);
+                $("#gifs").prepend(gifDiv);
             }
         }
     });
+
+});
+
+//animating gifs
+$(document).on('click', '.image', function(){
+	var state = $(this).attr('data-state');
+		if ( state == 'still'){
+                $(this).attr('src', $(this).data('animate'));
+                $(this).attr('data-state', 'animate');
+            }else{
+                $(this).attr('src', $(this).data('still'));
+                $(this).attr('data-state', 'still');
+            };
 });
