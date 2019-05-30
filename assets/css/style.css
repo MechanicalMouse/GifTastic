@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/leaves.png");
+    background-image: url("../images/snowflakes_on_purple.jpg");
     
 }
 
@@ -28,4 +28,12 @@ button div form input {
 
 .favButton {
     margin: 5px;
+}
+
+#favImg {
+    background: lavender;
+    border-radius: 5px;
+    border: dotted;
+    border-color: white;
+    width: 100%;
 }
